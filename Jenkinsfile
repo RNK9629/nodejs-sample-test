@@ -3,8 +3,8 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="224316520039"
         AWS_DEFAULT_REGION="ap-northeast-1" 
-        IMAGE_REPO_NAME="git-ecr"
-        IMAGE_TAG="lattest"
+        IMAGE_REPO_NAME="node-ecr-test"
+        IMAGE_TAG="v1"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
    
@@ -21,7 +21,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/RNK9629/nodejs-sample-test.git']]])     
             }
         }
         stage('Building image') {
