@@ -3,9 +3,9 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="224316520039"
         AWS_DEFAULT_REGION="ap-northeast-1" 
-        IMAGE_REPO_NAME="git-ecr"
-        IMAGE_TAG="lattest"
-        REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+        IMAGE_REPO_NAME="node-ecr-test"
+        IMAGE_TAG="v1"
+        REPOSITORY_URI = "224316520039.dkr.ecr.ap-northeast-1.amazonaws.com/node-ecr-test:v1"
     }
    
     stages {
