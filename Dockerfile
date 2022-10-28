@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:12 as production
+FROM node:09
 
 # Create app directory
 WORKDIR /usr/src/app
