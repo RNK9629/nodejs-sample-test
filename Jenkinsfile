@@ -21,7 +21,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/RNK9629/nodejs-sample-test.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/RNK9629/nodejs-sample-test.git']]])     
             }
         }
         stage('Building image') {
@@ -44,14 +44,6 @@ pipeline {
                 
             }
             
-        }
-        stage('ECS'){
-            steps{
-                script{
-                    sh "sed -e  node-signup.json > node-signup-v5.json"
-                    sh "aws ecs register-task-definition --cli-input-json file://node-signup-v5.json"
-                }
-            }
         }
         
     }
