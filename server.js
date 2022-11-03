@@ -10,7 +10,7 @@ const HOST = process.env.HOST || 'localhost';
 // App
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/server-1', (req, res) => {
   return res.send(`Hello World`);
 });
 
