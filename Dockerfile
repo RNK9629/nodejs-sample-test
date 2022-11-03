@@ -5,7 +5,6 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 COPY server.js ./
-COPY index.js ./
 
 RUN npm install
 # If you are building your code for production
