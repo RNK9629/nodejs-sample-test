@@ -4,13 +4,13 @@ const request = require("request");
 const express = require('express');
 
 // Constants
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || 'localhost';
 
 // App
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/oops', (req, res) => {
   return res.send(`Hello World`);
 });
 
