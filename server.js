@@ -1,18 +1,13 @@
-'use strict';
+var http = require('http');
 
-const request = require("request");
-const express = require('express');
+var server = http.createServer(function(request, response) {
 
-// Constants
-const PORT = process.env.PORT || 8080;
-const HOST = process.env.HOST || 'localhost';
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end("Hello, Welcome to DevOps CI CD");
 
-// App
-const app = express();
-
-app.get('/oops', (req, res) => {
-  return res.send(`Hello World`);
 });
 
-app.listen(PORT);
-console.log(`Running on port :${PORT}`);
+var port = 3000;
+server.listen(port);
+module.exports = server
+console.log("Server is available on Port:", port);
