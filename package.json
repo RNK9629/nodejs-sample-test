@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest ./src/test",
-    "start": "PORT=3000 node src/server.js",
+    "start": "PORT=3000 node server.js",
     "build": "npm run-script build"
   },
   "dependencies": {
