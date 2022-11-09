@@ -1,1 +1,28 @@
-
+{ 
+    "family": "nodejs",
+	"taskRoleArn": "arn:aws:iam::224316520039:role/task-ecr",
+	"containerDefinitions": [{
+		"name": "container-ecs",
+		"image": "224316520039.dkr.ecr.ap-southeast-2.amazonaws.com/node-ecs",
+		"cpu": 300,
+		"memory": 300,
+		"memoryReservation": 200,
+		"volumesFrom": [],
+		"portMappings": [{
+			"hostPort": 0,
+			"containerPort": 3000,
+			"protocol": "tcp"
+		}],
+		"essential": true,
+		"logConfiguration": {
+			"logDriver": "awslogs",
+			"options": {
+			  "awslogs-group": "nivesh",
+			  "awslogs-region": "ap-southeast-2",
+			  "awslogs-stream-prefix": "node"
+			}
+		  },
+		"environment": [],
+		"mountPoints": []
+	}]
+}
