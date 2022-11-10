@@ -10,7 +10,7 @@
 		"volumesFrom": [],
 		"portMappings": [{
 			"hostPort": 0,
-			"containerPort": 3001,
+			"containerPort": 5000,
 			"protocol": "tcp"
 		}],
 		"essential": true,
